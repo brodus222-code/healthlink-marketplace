@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { MapPin, Lock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function ZipForm({ variant = "hero" }) {
   const [zip, setZip] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (zip.length === 5) {
       setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 2000);
+      navigate(`/quote?zip=${zip}`);
     }
   };
 

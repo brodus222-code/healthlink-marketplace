@@ -1,0 +1,64 @@
+{
+  "name": "LeadSubmission",
+  "type": "object",
+  "properties": {
+    "zip_code": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "coverage_type": {
+      "type": "string"
+    },
+    "household_size": {
+      "type": "number"
+    },
+    "adults": {
+      "type": "number"
+    },
+    "children": {
+      "type": "number"
+    },
+    "applicant_age": {
+      "type": "number"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "tobacco_user": {
+      "type": "boolean"
+    },
+    "currently_insured": {
+      "type": "string"
+    },
+    "income_range": {
+      "type": "string"
+    },
+    "coverage_start": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "contacted",
+        "converted"
+      ],
+      "default": "submitted"
+    }
+  },
+  "required": []
+}
