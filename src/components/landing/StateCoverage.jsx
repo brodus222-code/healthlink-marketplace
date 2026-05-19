@@ -2,12 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const STATES = [
-  ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia"],
-  ["Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky"],
-  ["Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana"],
-  ["Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio"],
-  ["Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah"],
-  ["Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"],
+  ["Alabama", "Arizona", "Arkansas", "California", "District of Columbia", "Florida"],
+  ["Georgia", "Illinois", "Kansas", "Louisiana", "Mississippi", "Missouri"],
+  ["Nebraska", "New Jersey", "New York", "North Carolina", "Ohio", "Oklahoma"],
+  ["Pennsylvania", "South Carolina", "Tennessee", "Texas"],
 ];
 
 export default function StateCoverage() {
@@ -22,7 +20,7 @@ export default function StateCoverage() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-            Plans Available Across Every State
+            Plans Available in Your State
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Health coverage options vary by location — different carriers, plan types, and regulations shape 
@@ -38,7 +36,7 @@ export default function StateCoverage() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="bg-secondary/50 rounded-2xl p-6 sm:p-8"
         >
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-0">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-0">
             {STATES.map((column, colIdx) => (
               <ul key={colIdx} className="space-y-0">
                 {column.map((state) => (
