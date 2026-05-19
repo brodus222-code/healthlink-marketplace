@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const STATES = [
   ["Alabama", "Arizona", "Arkansas", "California", "District of Columbia", "Florida"],
@@ -9,6 +10,7 @@ const STATES = [
 ];
 
 export default function StateCoverage() {
+  const navigate = useNavigate();
   return (
     <section className="bg-card py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -41,7 +43,7 @@ export default function StateCoverage() {
               <ul key={colIdx} className="space-y-0">
                 {column.map((state) => (
                   <li key={state}>
-                    <button className="w-full text-left py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors duration-200 hover:translate-x-0.5 transform">
+                    <button onClick={() => navigate("/quote")} className="w-full text-left py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors duration-200 hover:translate-x-0.5 transform">
                       {state}
                     </button>
                   </li>
