@@ -1,5 +1,6 @@
 import React from "react";
 import { Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function LegalFooter() {
   return (
@@ -49,9 +50,9 @@ export default function LegalFooter() {
             © {new Date().getFullYear()} HealthLink Insurance Agency LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <button className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</button>
-            <button className="text-xs text-muted-foreground hover:text-foreground transition-colors">Terms of Use</button>
-            <button className="text-xs text-muted-foreground hover:text-foreground transition-colors">Licenses</button>
+            <Link to="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-use" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Terms of Use</Link>
+            <span className="text-xs text-muted-foreground">Springfield, IL 62701</span>
           </div>
         </div>
       </div>
