@@ -7,8 +7,8 @@ export default function CTASection() {
     <section className="relative overflow-hidden">
       {/* Deep teal gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(162_63%_55%_/_0.3),_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_hsl(43_96%_56%_/_0.1),_transparent_50%)]" />
+      <div className="absolute inset-0 opacity-30" style={{background: "radial-gradient(circle at top right, hsl(162 63% 55% / 0.3), transparent 60%)"}} />
+      <div className="absolute inset-0 opacity-10" style={{background: "radial-gradient(circle at bottom left, hsl(43 96% 56% / 0.1), transparent 50%)"}} />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
         <motion.div
