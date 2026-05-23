@@ -41,7 +41,7 @@ export default function FormShell({ currentStep, children, onBack, showBack }) {
           </div>
 
           {/* Card */}
-          <div className="bg-card rounded-3xl shadow-2xl shadow-black/8 border border-border/50 overflow-hidden">
+          <div className="bg-card rounded-3xl shadow-2xl border border-border/50 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStep}
