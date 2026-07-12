@@ -50,6 +50,10 @@
     "phone": {
       "type": "string"
     },
+    "sms_opt_in": {
+      "type": "boolean",
+      "default": false
+    },
     "status": {
       "type": "string",
       "enum": [

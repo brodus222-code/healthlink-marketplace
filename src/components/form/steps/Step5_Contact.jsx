@@ -30,7 +30,7 @@ export default function Step5_Contact({ data, onNext, isSubmitting }) {
   const [lastName, setLastName] = useState(data.last_name || "");
   const [email, setEmail] = useState(data.email || "");
   const [phone, setPhone] = useState(data.phone || "");
-  const [agreed, setAgreed] = useState(false);
+  const [smsOptIn, setSmsOptIn] = useState(false);
   const [error, setError] = useState("");
 
   const validate = () => {
@@ -39,7 +39,6 @@ export default function Step5_Contact({ data, onNext, isSubmitting }) {
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) return "Please enter a valid email address.";
     const digits = phone.replace(/\D/g, "");
     if (digits.length < 10) return "Please enter a valid 10-digit phone number.";
-    if (!agreed) return "Please agree to be contacted to continue.";
     return null;
   };
 
@@ -47,7 +46,7 @@ export default function Step5_Contact({ data, onNext, isSubmitting }) {
     const err = validate();
     if (err) { setError(err); return; }
     setError("");
-    onNext({ first_name: firstName, last_name: lastName, email, phone });
+    onNext({ first_name: firstName, last_name: lastName, email, phone, sms_opt_in: smsOptIn });
   };
 
   return (
@@ -86,19 +85,20 @@ export default function Step5_Contact({ data, onNext, isSubmitting }) {
         <Field label="Phone Number" icon={Phone} type="tel" placeholder="(555) 000-0000" value={phone} onChange={(e) => setPhone(formatPhone(e.target.value))} />
       </div>
 
-      {/* TCPA consent */}
-      <div className="mb-6 p-4 bg-secondary/50 rounded-2xl">
-        <label className="flex gap-3 cursor-pointer">
-          <div
-            onClick={() => setAgreed(!agreed)}
-            className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors ${agreed ? "bg-primary border-primary" : "border-border bg-card"}`}
-          >
-            {agreed && <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>}
+      {/* Optional SMS opt-in */}
+      <div className="mb-6">
+        <div
+          onClick={() => setSmsOptIn(!smsOptIn)}
+          className="flex gap-3 cursor-pointer items-start p-4 bg-secondary/40 rounded-2xl border border-border select-none"
+        >
+          <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors ${smsOptIn ? "bg-primary border-primary" : "border-border bg-card"}`}>
+            {smsOptIn && <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>}
           </div>
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            By submitting, I agree to be contacted by HealthLink Insurance Agency LLC and its licensed agents via phone, email, or text message regarding health insurance plans. Standard message rates may apply. I understand this is not required to purchase insurance.
+          <p className="text-sm text-foreground leading-relaxed">
+            <span className="font-semibold">Yes, text me updates about my quote.</span>{" "}
+            <span className="text-muted-foreground">Get instant plan alerts and agent follow-up via SMS. Optional — uncheck to opt out.</span>
           </p>
-        </label>
+        </div>
       </div>
 
       {error && <p className="text-destructive text-sm font-medium mb-4 flex items-center gap-1.5">⚠ {error}</p>}
@@ -120,6 +120,10 @@ export default function Step5_Contact({ data, onNext, isSubmitting }) {
           </>
         )}
       </Button>
+
+      <p className="text-[11px] text-muted-foreground/80 leading-relaxed mt-4 px-1">
+        By submitting, you authorize HealthLink Insurance Agency LLC and its licensed agents to contact you by phone, email, or text message regarding health insurance plans, including via automated dialing systems and prerecorded messages, even if your number is on a Do-Not-Call list. Standard message and data rates may apply. Consent is not a condition of purchase and may be revoked at any time.
+      </p>
 
       <p className="text-center text-xs text-muted-foreground mt-4">
         🔒 256-bit SSL · Your info is never sold · No spam, ever
