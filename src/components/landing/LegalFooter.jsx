@@ -16,6 +16,19 @@ export default function LegalFooter() {
           </span>
         </div>
 
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+          {[
+            ["/about-us", "About Us"],
+            ["/marketplace-plans", "ACA Marketplace"],
+            ["/individual", "Individual"],
+            ["/family", "Family"],
+            ["/self-employed", "Self-Employed"],
+            ["/short-term-medical", "Short-Term Medical"],
+          ].map(([to, label]) => (
+            <Link key={to} to={to} className="text-sm font-medium text-foreground hover:text-primary transition-colors">{label}</Link>
+          ))}
+        </nav>
+
         {/* Legal disclosures */}
         <div className="space-y-4 text-xs text-muted-foreground leading-relaxed">
           <p>

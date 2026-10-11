@@ -9,6 +9,12 @@ import Home from './pages/Home';
 import QuoteForm from './pages/QuoteForm';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
+import AboutUs from './pages/AboutUs';
+import MarketplacePlans from './pages/MarketplacePlans';
+import IndividualPlans from './pages/IndividualPlans';
+import FamilyPlans from './pages/FamilyPlans';
+import SelfEmployed from './pages/SelfEmployed';
+import ShortTermMedical from './pages/ShortTermMedical';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -42,6 +48,12 @@ const AuthenticatedApp = () => {
       <Route path="/quote" element={<QuoteForm />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-of-use" element={<TermsOfUse />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/marketplace-plans" element={<MarketplacePlans />} />
+      <Route path="/individual" element={<IndividualPlans />} />
+      <Route path="/family" element={<FamilyPlans />} />
+      <Route path="/self-employed" element={<SelfEmployed />} />
+      <Route path="/short-term-medical" element={<ShortTermMedical />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
