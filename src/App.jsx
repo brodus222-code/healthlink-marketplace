@@ -6,16 +6,15 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import Home from './pages/Home';
-import { lazy, Suspense } from 'react';
-const QuoteForm = lazy(() => import('./pages/QuoteForm'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const TermsOfUse = lazy(() => import('./pages/TermsOfUse'));
-const AboutUs = lazy(() => import('./pages/AboutUs'));
-const MarketplacePlans = lazy(() => import('./pages/MarketplacePlans'));
-const IndividualPlans = lazy(() => import('./pages/IndividualPlans'));
-const FamilyPlans = lazy(() => import('./pages/FamilyPlans'));
-const SelfEmployed = lazy(() => import('./pages/SelfEmployed'));
-const ShortTermMedical = lazy(() => import('./pages/ShortTermMedical'));
+import QuoteForm from './pages/QuoteForm';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+import AboutUs from './pages/AboutUs';
+import MarketplacePlans from './pages/MarketplacePlans';
+import IndividualPlans from './pages/IndividualPlans';
+import FamilyPlans from './pages/FamilyPlans';
+import SelfEmployed from './pages/SelfEmployed';
+import ShortTermMedical from './pages/ShortTermMedical';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -43,7 +42,6 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
-    <Suspense fallback={<div className="min-h-screen bg-background" />}>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/lander" element={<Home />} />
@@ -58,7 +56,6 @@ const AuthenticatedApp = () => {
       <Route path="/short-term-medical" element={<ShortTermMedical />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
-    </Suspense>
   );
 };
 

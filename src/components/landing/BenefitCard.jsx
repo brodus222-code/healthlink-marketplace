@@ -11,7 +11,7 @@ export default function BenefitCard({ image, title, description, index }) {
       className="group relative bg-card rounded-2xl p-8 border border-border/60 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500"
     >
       <div className="w-20 h-20 rounded-2xl bg-primary/8 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-        <img src={image} alt={title} width="56" height="56" loading="lazy" decoding="async" className="w-14 h-14 object-contain" />
+        <img src={image} alt={title} className="w-14 h-14 object-contain" />
       </div>
       <h3 className="text-xl font-bold text-foreground mb-3">{title}</h3>
       <p className="text-muted-foreground leading-relaxed">{description}</p>

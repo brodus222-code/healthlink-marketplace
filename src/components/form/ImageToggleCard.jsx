@@ -28,7 +28,7 @@ export default function ImageToggleCard({ id, label, sublabel, icon: Icon, emoji
 
       <div className="flex items-center gap-4">
         {image ? (
-          <img src={image} alt={label} width="64" height="64" decoding="async" className="w-16 h-16 object-contain rounded-xl flex-shrink-0" />
+          <img src={image} alt={label} className="w-16 h-16 object-contain rounded-xl flex-shrink-0" />
         ) : emoji ? (
           <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 ${selected ? "bg-primary/10" : "bg-secondary"}`}>
             {emoji}
