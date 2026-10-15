@@ -55,7 +55,7 @@ export default function Step1_Coverage({ data, onNext }) {
             )}
             <div className="flex items-center gap-4">
               {opt.image ? (
-                <img src={opt.image} alt={opt.label} className="w-14 h-14 object-contain rounded-xl flex-shrink-0" />
+                <img src={opt.image} alt={opt.label} width="56" height="56" decoding="async" className="w-14 h-14 object-contain rounded-xl flex-shrink-0" />
               ) : (
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 ${selected === opt.id ? "bg-primary/15" : "bg-secondary"}`}>
                   {opt.emoji}

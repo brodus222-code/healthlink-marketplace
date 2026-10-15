@@ -42,7 +42,11 @@ export default function HeroSection() {
             <img
               src={HERO_IMAGE}
               alt="Healthcare professional reviewing coverage options with a clipboard and medical symbols"
-              className="w-full max-w-lg drop-shadow-xl"
+              width="512"
+              height="512"
+              fetchpriority="high"
+              decoding="async"
+              className="w-full max-w-lg h-auto drop-shadow-xl"
             />
           </motion.div>
         </div>
