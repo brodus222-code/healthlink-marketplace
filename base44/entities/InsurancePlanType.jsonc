@@ -1,0 +1,40 @@
+{
+  "name": "InsurancePlanType",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "aca_marketplace",
+        "short_term",
+        "individual",
+        "family"
+      ]
+    },
+    "network_type": {
+      "type": "string",
+      "enum": [
+        "HMO",
+        "PPO",
+        "EPO",
+        "POS"
+      ]
+    },
+    "aca_compliant": {
+      "type": "boolean",
+      "default": true
+    },
+    "slug": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

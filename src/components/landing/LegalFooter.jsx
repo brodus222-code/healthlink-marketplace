@@ -24,6 +24,7 @@ export default function LegalFooter() {
             ["/family", "Family"],
             ["/self-employed", "Self-Employed"],
             ["/short-term-medical", "Short-Term Medical"],
+            ["/health-insurance-guide", "Insurance Guide"],
           ].map(([to, label]) => (
             <Link key={to} to={to} className="text-sm font-medium text-foreground hover:text-primary transition-colors">{label}</Link>
           ))}
