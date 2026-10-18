@@ -16,6 +16,7 @@ import FamilyPlans from './pages/FamilyPlans';
 import SelfEmployed from './pages/SelfEmployed';
 import ShortTermMedical from './pages/ShortTermMedical';
 import HealthInsuranceGuide from './pages/HealthInsuranceGuide';
+import HealthInsuranceFAQ from './pages/HealthInsuranceFAQ';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -56,6 +57,7 @@ const AuthenticatedApp = () => {
       <Route path="/self-employed" element={<SelfEmployed />} />
       <Route path="/short-term-medical" element={<ShortTermMedical />} />
       <Route path="/health-insurance-guide" element={<HealthInsuranceGuide />} />
+      <Route path="/faq" element={<HealthInsuranceFAQ />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
